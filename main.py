@@ -26,7 +26,7 @@ def clientSSH(pon, onuid, host, port=22):
         # Iniciando uma sessão.
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        client.connect(hostname=host, port=port ,username='suporte', password='n2GC@Sept21')
+        client.connect(hostname=host, port=port ,username='', password='')
         stdin,stdout,stderr=client.exec_command(f"show interface gpon {pon} onu {onuid}")
         outlines=stdout.readlines()
         client.close()         
