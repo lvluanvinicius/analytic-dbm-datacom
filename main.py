@@ -27,7 +27,6 @@ olt_name=arguments.name
 
 """ Arrays auxiliares de produção. """
 clients_onu=[]
-pons_average_dbm=[]
 
 """ Função de consulta SSH. """
 def clientSSH(clientssh, pon, onuid):
@@ -96,9 +95,8 @@ for clt_id in range(0, nclients+1, 1):
     else: 
         """Salvando retorno da consulta."""
         clients_onu.append(consult)
-        # pons_average_dbm.append()
         """Salvando na Base de Dados.""" 
-        # md_onus.save(data=consult)
+        md_onus.save(data=consult)
     
       
 """ Criando um Dataframe para apresentação dos valores em tela."""
@@ -116,10 +114,10 @@ Template de apresentação.
 Calculando a média de dbm e apresentando em tela.
 """
 print(f"""
-{"="*60}
+{"="*90}
 {df}
-{"="*60}
+{"="*90}
 {"Média de DBM da PON: {:.2f}".format(np.mean(df['DBM'].values))}
 PON escaneada: {pon}
-{"="*60}
+{"="*90}
 """);
