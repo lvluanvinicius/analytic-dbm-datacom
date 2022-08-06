@@ -8,8 +8,8 @@ import argparse
 from sql.onus import OnusModel
 from sql.ponsAverageDbm import PonsAverageDbm
 
-USER="suporte"
-PASS="n2GC@Sept21"
+USER=""
+PASS=""
 
 """ Carregando argumentos."""
 argument = argparse.ArgumentParser(description="")
