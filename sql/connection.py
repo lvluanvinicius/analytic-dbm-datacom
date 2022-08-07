@@ -3,10 +3,10 @@ import mysql.connector
 class MysqlConnection(object):
     
     def __init__(self, *args, **kwargs):
-        self.HOST = "10.254.192.212" 
-        self.PORT = "33061" 
+        self.HOST = "0.0.0.0" 
+        self.PORT = "33060" 
         self.USERNAME = "root" 
-        self.PASSWORD = "965700"
+        self.PASSWORD = ""
         self.DATABASE = "analytic_dbm"
     
     def __str__(self):
@@ -25,16 +25,3 @@ class MysqlConnection(object):
         return conn
 
     
-
-
-
-if __name__=="__main__":
-    print("--------------------------")
-    mysqlconn = MysqlConnection()
-    conn = mysqlconn.connection()
-    conn.get_server_info();
-    if conn.is_connected():
-        print("Banco de dados conectado")
-        cursor = conn.cursor()
-        cursor.execute("select * from onus")
-        print(cursor.fetchall())
